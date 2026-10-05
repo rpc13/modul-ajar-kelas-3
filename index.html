@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aplikasi Modul Ajar – Ayo Jaga Lingkungan</title>
+<style>
+:root{--bg:#f1f9f3;--card:#fff;--ink:#17361f;--mut:#51705b;--g:#2e9e5b;--g2:#d9f2e2;--y:#ffd54a;--b:#3a9bdc;--r:#e5484d;--line:#cde5d3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1f15;--card:#17301f;--ink:#e6f4ea;--mut:#a9c7b3;--g2:#1f4a2f;--line:#2c5a3b}}
+:root[data-theme="dark"]{--bg:#0f1f15;--card:#17301f;--ink:#e6f4ea;--mut:#a9c7b3;--g2:#1f4a2f;--line:#2c5a3b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Nunito","Segoe UI",system-ui,sans-serif}
+header{background:linear-gradient(135deg,#2e9e5b,#3a9bdc);color:#fff;padding:16px 16px 14px;text-align:center}
+header h1{margin:0;font-size:22px}header p{margin:2px 0 0;font-size:13px;opacity:.95}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 10px 6px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+nav button{flex:0 0 auto;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 14px;font:inherit;font-weight:700;font-size:14px;cursor:pointer}
+nav button.on{background:var(--g);border-color:var(--g);color:#fff}
+main{max-width:760px;margin:0 auto;padding:6px 12px 40px}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px 16px;margin:10px 0}
+h2{font-size:19px;margin:14px 0 4px}h3{margin:0 0 6px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{text-align:center;background:var(--g2);border-radius:16px;padding:10px}.stat b{display:block;font-size:22px}
+.btn{border:0;background:var(--g);color:#fff;border-radius:12px;padding:10px 16px;font:inherit;font-weight:800;cursor:pointer}
+.btn.alt{background:var(--b)}.btn.y{background:var(--y);color:#4a3b00}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:top}th{background:var(--g2)}
+label.s{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+label.s input{margin-top:5px;width:18px;height:18px;accent-color:var(--g)}
+label.s.done span{text-decoration:line-through;color:var(--mut)}
+.bar{height:12px;background:var(--g2);border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--g);width:0;transition:width .3s}
+.timer{font-size:26px;font-weight:900;font-variant-numeric:tabular-nums;color:var(--b)}
+.big{font-size:70px;text-align:center;line-height:1.1}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 12px;font:inherit;cursor:pointer}
+.opt.ok{background:#bdf0cf;border-color:var(--g);color:#0b3a1c}.opt.no{background:#ffd3d4;border-color:var(--r);color:#5a0b0e}
+.msg{min-height:26px;font-weight:800;text-align:center}
+textarea,input[type=text]{width:100%;border:2px solid var(--line);border-radius:12px;padding:10px;font:inherit;background:var(--card);color:var(--ink)}
+.chip{display:inline-block;background:var(--g2);border-radius:99px;padding:2px 12px;margin:2px;font-size:14px}
+.note{font-size:13px;color:var(--mut)}
+</style></head><body>
+<header><h1>🌍 Ayo Jaga Lingkungan</h1><p>Modul Ajar IPAS • Kelas III / Fase B • UPT SPF SDN Rappocini</p></header>
+<nav id="nav"></nav>
+<main>
+
+<section id="beranda">
+<div class="card"><h3>📋 Identitas</h3><div class="wrap"><table>
+<tr><td><b>Penyusun</b></td><td>Hamsinah, S.Pd</td></tr>
+<tr><td><b>Guru Kelas III</b></td><td>Hamsinah, S.Pd., Gr</td></tr>
+<tr><td><b>Tahun / Semester</b></td><td>2026/2027 • Ganjil</td></tr>
+<tr><td><b>Model</b></td><td>Problem Based Learning (PBL)</td></tr>
+<tr><td><b>Metode</b></td><td>Ceramah interaktif, diskusi, tanya jawab</td></tr></table></div></div>
+<div class="grid"><div class="stat">⏱️<b>70</b>menit (2×35)</div><div class="stat">🎯<b>3</b>tujuan</div><div class="stat">🧩<b>3</b>tahap inti</div><div class="stat">🌟<b>8</b>profil lulusan</div></div>
+<div class="card"><h3>🎓 Capaian Pembelajaran</h3><p>Peserta didik mampu mengidentifikasi masalah lingkungan di sekitarnya dan menghasilkan solusi sederhana untuk menjaga kelestarian lingkungan.</p></div>
+<div class="card wrap"><h3>✅ Tujuan Pembelajaran</h3><table><tr><th>TP</th><th>Peserta didik dapat…</th><th>SOLO</th></tr>
+<tr><td>1</td><td>menjelaskan pentingnya menjaga kebersihan dan kelestarian lingkungan.</td><td>Uni</td></tr>
+<tr><td>2</td><td>menunjukkan sikap peduli: membuang sampah pada tempatnya, menghemat air, merawat tanaman.</td><td>Multi</td></tr>
+<tr><td>3</td><td>membuat poster “Ayo Jaga Lingkungan”.</td><td>Relasional</td></tr></table></div>
+<div class="card"><h3>🌟 Dimensi Profil Lulusan</h3>
+<span class="chip">🙏 Keimanan</span><span class="chip">🏘️ Kewargaan</span><span class="chip">🔍 Penalaran Kritis</span><span class="chip">🤝 Kolaborasi</span><span class="chip">💪 Kemandirian</span><span class="chip">💬 Komunikasi</span><span class="chip">❤️ Kesehatan</span><span class="chip">🎨 Kreativitas</span></div>
+<div class="card"><h3>🔗 Lintas Disiplin</h3><span class="chip">Bahasa Indonesia</span><span class="chip">Pend. Pancasila</span><span class="chip">Matematika</span><span class="chip">Seni Budaya</span><span class="chip">PJOK</span><span class="chip">Informatika</span></div>
+</section>
+
+<section id="kegiatan">
+<p class="note">Centang langkah yang sudah dilakukan. Progres tersimpan di perangkat ini.</p>
+<div class="card"><div class="row"><b id="pall">0%</b><div class="bar" style="flex:1"><i id="barall"></i></div></div></div>
+<div id="phases"></div>
+</section>
+
+<section id="lkpd">
+<div class="card"><h3>🗑️ LKPD Interaktif: Pilah Sampahnya!</h3>
+<p class="note">Ketuk tempat sampah yang tepat untuk setiap benda.</p>
+<div class="row"><div class="bar" style="flex:1"><i id="gbar"></i></div><b id="gscore">0/8</b></div>
+<div class="big" id="gitem" style="margin:14px 0"></div>
+<div style="text-align:center;font-weight:800" id="gname"></div>
+<div class="row" style="justify-content:center;margin-top:10px"><button class="btn" id="bo">🌿 Organik</button><button class="btn alt" id="ba">♻️ Anorganik</button></div>
+<div class="msg" id="gmsg"></div>
+<div style="text-align:center"><button class="btn y" id="greset">Main lagi</button></div></div>
+</section>
+
+<section id="kuis">
+<div class="card"><div class="row"><b id="qn"></b><div class="bar" style="flex:1"><i id="qbar"></i></div></div>
+<h3 id="qq" style="margin-top:12px"></h3><div id="qo"></div><div class="msg" id="qmsg"></div>
+<div style="text-align:center"><button class="btn" id="qnext" style="display:none">Lanjut ➜</button></div></div>
+</section>
+
+<section id="refleksi">
+<div class="card"><h3>💭 Refleksi</h3><p>Hari ini saya belajar bahwa menjaga lingkungan dapat dimulai dari ....</p>
+<input type="text" id="r1" placeholder="Tulis jawabanmu">
+<h3 style="margin-top:14px">🤝 Komitmen Peduli Lingkungan</h3>
+<textarea id="r2" rows="3" placeholder="Contoh: Saya akan selalu membuang sampah pada tempatnya."></textarea>
+<div class="row" style="margin-top:10px"><button class="btn" id="rsave">Simpan</button><span id="rmsg" class="note"></span></div></div>
+<div id="rlist"></div>
+<div class="card"><h3>📝 Rubrik Poster</h3><div class="wrap"><table><tr><th>Aspek</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>
+<tr><td>Pesan</td><td>Belum jelas</td><td>Cukup jelas</td><td>Jelas, mengajak</td></tr>
+<tr><td>Kreativitas</td><td>Sederhana</td><td>Ada gambar</td><td>Menarik, orisinal</td></tr>
+<tr><td>Kerja sama</td><td>Dibantu</td><td>Sebagian</td><td>Semua berperan</td></tr>
+<tr><td>Presentasi</td><td>Dibantu</td><td>Cukup lancar</td><td>Percaya diri</td></tr></table></div></div>
+</section>
+</main>
+
+<script>
+const $=id=>document.getElementById(id);
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+// NAV
+const tabs=[["beranda","🏠 Beranda"],["kegiatan","📚 Kegiatan"],["lkpd","🗑️ LKPD"],["kuis","❓ Kuis"],["refleksi","💭 Refleksi"]];
+$("nav").innerHTML=tabs.map(t=>`<button data-t="${t[0]}">${t[1]}</button>`).join("");
+function show(id){tabs.forEach(t=>$(t[0]).classList.toggle("on",t[0]===id));[...$("nav").children].forEach(b=>b.classList.toggle("on",b.dataset.t===id));window.scrollTo(0,0)}
+$("nav").onclick=e=>{if(e.target.dataset.t)show(e.target.dataset.t)};show("beranda");
+
+// KEGIATAN
+const P=[
+{n:"☀️ Kegiatan Awal",m:10,s:["Salam, doa, cek kehadiran, dan tepuk semangat bertema lingkungan","Apersepsi: “Bagaimana keadaan lingkungan di sekitar rumah atau sekolah kalian?”","Tampilkan gambar/video lingkungan bersih dan kotor","Peserta didik menyampaikan perbedaan kedua kondisi","Sampaikan tujuan dan motivasi: mulai dari hal kecil"]},
+{n:"🔎 Kegiatan Inti",m:50,s:["Memahami: amati gambar/video dan jawab pertanyaan pemantik","Guru menjelaskan pengertian dan pentingnya menjaga lingkungan","Diskusi kelompok: perilaku baik dan tidak baik, lalu presentasi singkat","Mengaplikasi: pengamatan kelas/halaman (sampah, tempat sampah, tanaman)","Menentukan masalah, penyebab, dan cara mengatasinya","Aksi nyata: memungut dan memilah sampah, merawat tanaman","Membuat poster/slogan “Ayo Jaga Lingkungan” dan presentasi","Merefleksi: pertanyaan refleksi dan komitmen pribadi"]},
+{n:"🌈 Kegiatan Akhir",m:10,s:["Menyimpulkan materi bersama","Tanya jawab: apa itu lingkungan, mengapa dijaga, tiga cara menjaganya","Berbagi hal paling berkesan dan apresiasi guru","Tugas rumah: amati kebersihan rumah dan lakukan satu tindakan","Doa bersama dan salam penutup"]}];
+let done=store.get("done",{});
+const tm={};
+function drawP(){
+ $("phases").innerHTML=P.map((p,i)=>`<div class="card"><div class="row" style="justify-content:space-between"><h3>${p.n}</h3><span class="chip">${p.m} menit</span></div>
+ <div class="row"><span class="timer" id="t${i}">${String(p.m).padStart(2,"0")}:00</span><button class="btn alt" data-ti="${i}">▶ Mulai</button></div>
+ ${p.s.map((x,j)=>`<label class="s ${done[i+"_"+j]?"done":""}"><input type="checkbox" data-k="${i}_${j}" ${done[i+"_"+j]?"checked":""}><span>${x}</span></label>`).join("")}</div>`).join("");
+ const tot=P.reduce((a,p)=>a+p.s.length,0),d=Object.values(done).filter(Boolean).length,pc=Math.round(d/tot*100);
+ $("pall").textContent=pc+"%";$("barall").style.width=pc+"%";
+}
+$("phases").onchange=e=>{if(e.target.dataset.k){done[e.target.dataset.k]=e.target.checked;store.set("done",done);drawP()}};
+$("phases").onclick=e=>{const i=e.target.dataset.ti;if(i===undefined)return;
+ if(tm[i]){clearInterval(tm[i].id);delete tm[i];e.target.textContent="▶ Mulai";return}
+ const el=$("t"+i);let [mm,ss]=el.textContent.split(":").map(Number);let left=mm*60+ss;e.target.textContent="⏸ Jeda";
+ tm[i]={id:setInterval(()=>{left--;if(left<=0){clearInterval(tm[i].id);delete tm[i];left=0;e.target.textContent="✔ Selesai"}
+ el.textContent=String(Math.floor(left/60)).padStart(2,"0")+":"+String(left%60).padStart(2,"0")},1000)}};
+drawP();
+
+// GAME
+const G=[["🍌","Kulit pisang","o"],["🥤","Botol plastik","a"],["🍃","Daun kering","o"],["📰","Koran bekas","a"],["🍞","Sisa roti","o"],["🥫","Kaleng","a"],["🍎","Sisa buah","o"],["🛍️","Kantong plastik","a"]];
+let gi=0,gs=0,lock=false;
+function gdraw(){if(gi>=G.length){$("gitem").textContent=gs>=7?"🏆":gs>=5?"👍":"💪";$("gname").textContent="Skor akhir: "+gs+"/"+G.length;$("gmsg").textContent=gs>=7?"Hebat! Kamu jagoan lingkungan!":"Ayo coba lagi!";return}
+ $("gitem").textContent=G[gi][0];$("gname").textContent=G[gi][1];$("gmsg").textContent="";$("gscore").textContent=gs+"/"+G.length;$("gbar").style.width=gi/G.length*100+"%"}
+function gpick(t){if(gi>=G.length||lock)return;const ok=G[gi][2]===t;if(ok)gs++;lock=true;
+ $("gmsg").textContent=ok?"✅ Benar!":"❌ Kurang tepat, itu "+(G[gi][2]==="o"?"organik":"anorganik");
+ setTimeout(()=>{gi++;lock=false;gdraw()},900)}
+$("bo").onclick=()=>gpick("o");$("ba").onclick=()=>gpick("a");
+$("greset").onclick=()=>{gi=0;gs=0;lock=false;gdraw()};gdraw();
+
+// KUIS
+const Q=[["Manakah tindakan yang menunjukkan kepedulian terhadap lingkungan?",["Membuang sampah sembarangan","Membuang sampah pada tempatnya","Membiarkan keran air menyala"],1],
+["Kulit pisang termasuk sampah…",["Organik","Anorganik","Logam"],0],
+["Apa akibat membuang sampah sembarangan?",["Lingkungan bersih","Lingkungan kotor dan mudah sakit","Tanaman tumbuh subur"],1],
+["Cara sederhana merawat tanaman di sekolah adalah…",["Menyiram secara teratur","Menginjaknya","Mencabutnya"],0],
+["Siapa yang bertanggung jawab menjaga lingkungan?",["Hanya guru","Hanya petugas kebersihan","Kita semua"],2]];
+let qi=0,qs=0,ans=false;
+function qdraw(){if(qi>=Q.length){$("qq").textContent="🎉 Skor kamu: "+qs+"/"+Q.length;$("qo").innerHTML="";$("qmsg").textContent=qs>=4?"Luar biasa!":"Ayo belajar lagi!";$("qnext").style.display="";$("qnext").textContent="↺ Ulangi";$("qbar").style.width="100%";return}
+ ans=false;$("qn").textContent=(qi+1)+"/"+Q.length;$("qbar").style.width=qi/Q.length*100+"%";$("qq").textContent=Q[qi][0];$("qmsg").textContent="";$("qnext").style.display="none";
+ $("qo").innerHTML=Q[qi][1].map((o,k)=>`<button class="opt" data-k="${k}">${o}</button>`).join("")}
+$("qo").onclick=e=>{const k=e.target.dataset.k;if(k===undefined||ans)return;ans=true;const c=Q[qi][2];
+ [...$("qo").children].forEach((b,j)=>{if(j===c)b.classList.add("ok");else if(j==k)b.classList.add("no")});
+ if(+k===c){qs++;$("qmsg").textContent="✅ Benar!"}else $("qmsg").textContent="❌ Jawaban benar: "+Q[qi][1][c];
+ $("qnext").style.display="";$("qnext").textContent="Lanjut ➜"};
+$("qnext").onclick=()=>{if(qi>=Q.length){qi=0;qs=0}else qi++;qdraw()};qdraw();
+
+// REFLEKSI
+let rs=store.get("refleksi",[]);
+function rdraw(){$("rlist").innerHTML=rs.length?`<div class="card"><h3>📌 Catatan tersimpan</h3>${rs.map(r=>`<p>🌱 <b>Menjaga lingkungan dimulai dari</b> ${r.a||"…"}<br>🤝 ${r.b||"-"}</p>`).join("")}</div>`:""}
+$("rsave").onclick=()=>{const a=$("r1").value.trim(),b=$("r2").value.trim();if(!a&&!b){$("rmsg").textContent="Isi dulu ya.";return}
+ rs.unshift({a,b});rs=rs.slice(0,20);store.set("refleksi",rs);$("r1").value="";$("r2").value="";$("rmsg").textContent="Tersimpan ✔";rdraw()};
+rdraw();
+</script></body></html>
